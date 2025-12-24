@@ -69,4 +69,4 @@
 ### Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/anas-humam/sneakerhub-ecommerce.git
+git clone https://github.com/anas-humam/sneakerhub-ecommerce.git](https://github.com/Ihumam/E-Commerce-Sneaker-Store-HTML-CSS-JS-Project.git
