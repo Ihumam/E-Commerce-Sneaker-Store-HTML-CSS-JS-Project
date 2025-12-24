@@ -6,15 +6,6 @@
 ![Responsive](https://img.shields.io/badge/Responsive-Yes-green?style=for-the-badge)
 ![Dark Mode](https://img.shields.io/badge/Dark%20Mode-Enabled-purple?style=for-the-badge)
 
-**A fully responsive e-commerce website for sneakers enthusiasts** built with pure HTML, CSS, and JavaScript as a final project for Web Programming course (UAS).
-
-## ✨ Live Demo
-🔗 **[Click here to view live demo](https://sneakerhub-anas.netlify.app)** *(Deployed on Netlify)*
-
-## 📸 Preview
-| Home Page | Product Details | Dark Mode |
-|-----------|-----------------|-----------|
-| ![Home Page](https://via.placeholder.com/400x250/667eea/ffffff?text=Home+Page) | ![Product Details](https://via.placeholder.com/400x250/764ba2/ffffff?text=Product+Details) | ![Dark Mode](https://via.placeholder.com/400x250/121212/e0e0e0?text=Dark+Mode) |
 
 ## 🎯 Features
 
@@ -43,4 +34,39 @@
 - **Mobile-First Responsive Design**
 - **Cross-Browser Compatibility**
 
-## 📁 Project Structure
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **HTML5** | Semantic markup & structure |
+| **CSS3** | Styling, animations, responsive design |
+| **JavaScript (ES6)** | Interactive functionality |
+| **Font Awesome 6** | Icon library |
+| **Google Fonts** | Poppins font family |
+| **LocalStorage API** | Client-side data persistence |
+| **Git & GitHub** | Version control & deployment |
+
+## 🎨 Design Highlights
+- **Modern Gradient Backgrounds** with smooth transitions
+- **Card-Based Product Display** with hover effects
+- **Consistent Color Scheme** (#007bff primary, #ff6b6b accent)
+- **Professional Typography** using Poppins font
+- **Smooth Animations** on all interactions
+- **Clean & Minimalist UI** for better UX
+
+## 📱 Responsive Breakpoints
+- **Mobile**: < 768px (hamburger menu, stacked layout)
+- **Tablet**: 768px - 992px (adjusted grid layouts)
+- **Desktop**: > 992px (full-featured experience)
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Modern web browser (Chrome, Firefox, Edge, Safari)
+- No build tools required!
+
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/anas-humam/sneakerhub-ecommerce.git
