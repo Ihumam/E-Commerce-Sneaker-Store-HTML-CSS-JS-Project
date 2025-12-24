@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - SneakerHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Sneaker<span>Hub</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="daftar.html" class="active"><i class="fas fa-user-plus"></i> Daftar</a></li>
+                <li><a href="profil.html"><i class="fas fa-user"></i> Profil</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <!-- Cart Icon -->
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Hamburger Menu -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p style="color: white; margin-top: 20px;">Memuat...</p>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <h3><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h3>
+    <div id="cartItems">
+        <p style="text-align: center; margin-top: 50px;">Keranjang masih kosong</p>
+    </div>
+    <div class="cart-total">
+        Total: <span id="cartTotal">Rp 0</span>
+    </div>
+    <button class="btn" style="width: 100%; margin-top: 20px;">
+        <i class="fas fa-check"></i> Checkout
+    </button>
+    <button class="btn" style="width: 100%; margin-top: 10px; background: #6c757d;" id="closeCart">
+        <i class="fas fa-times"></i> Tutup
+    </button>
+</div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        Produk berhasil ditambahkan ke keranjang!
+    </div>
+
+    <section class="container">
+        <div class="form-container">
+            <h2 class="section-title">Daftar Akun Baru</h2>
+            <form id="formDaftar">
+                <div class="form-group">
+                    <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="nama" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> Konfirmasi Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="jenisKelamin"><i class="fas fa-venus-mars"></i> Jenis Kelamin</label>
+                    <select id="jenisKelamin">
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telepon"><i class="fas fa-phone"></i> Nomor Telepon</label>
+                    <input type="tel" id="telepon">
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" required>
+                        Saya menyetujui <a href="#">Syarat dan Ketentuan</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; padding: 15px;">
+                    <i class="fas fa-user-plus"></i> Daftar Sekarang
+                </button>
+            </form>
+            
+            <div class="form-footer">
+                <p>Sudah punya akun? <a href="#">Login di sini</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SneakerHub. UAS Pemrograman Web - <strong>Muhammad Arnirofa' Anas Humam | NIM: 2410010010 | Teknik Informatika</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('formDaftar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password.length < 6) {
+                showToast('Password minimal 6 karakter!', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showToast('Password dan Konfirmasi Password tidak cocok!', 'error');
+                return;
+            }
+            
+            showLoading();
+            setTimeout(() => {
+                hideLoading();
+                showToast('Pendaftaran berhasil! 🎉');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

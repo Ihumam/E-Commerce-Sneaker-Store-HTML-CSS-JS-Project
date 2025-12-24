@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - SneakerHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Sneaker<span>Hub</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="daftar.html"><i class="fas fa-user-plus"></i> Daftar</a></li>
+                <li><a href="profil.html" class="active"><i class="fas fa-user"></i> Profil</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <!-- Cart Icon -->
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Hamburger Menu -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p style="color: white; margin-top: 20px;">Memuat...</p>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <h3><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h3>
+    <div id="cartItems">
+        <p style="text-align: center; margin-top: 50px;">Keranjang masih kosong</p>
+    </div>
+    <div class="cart-total">
+        Total: <span id="cartTotal">Rp 0</span>
+    </div>
+    <button class="btn" style="width: 100%; margin-top: 20px;">
+        <i class="fas fa-check"></i> Checkout
+    </button>
+    <button class="btn" style="width: 100%; margin-top: 10px; background: #6c757d;" id="closeCart">
+        <i class="fas fa-times"></i> Tutup
+    </button>
+</div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        Produk berhasil ditambahkan ke keranjang!
+    </div>
+
+    <section class="container">
+        <div class="student-badge">
+            <h3><i class="fas fa-user-graduate"></i> IDENTITAS MAHASISWA</h3>
+            <p><strong>Nama:</strong> Muhammad Arnirofa' Anas Humam</p>
+            <p><strong>NIM:</strong> 2410010010</p>
+            <p><strong>Program Studi:</strong> Teknik Informatika</p>
+            <p><strong>Mata Kuliah:</strong> Pemrograman Web</p>
+        </div>
+        
+        <div class="profil-container">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#identitas" class="active"><i class="fas fa-id-card"></i> Identitas</a></li>
+                    <li><a href="#tentang"><i class="fas fa-info-circle"></i> Tentang Projek</a></li>
+                    <li><a href="#teknologi"><i class="fas fa-code"></i> Teknologi</a></li>
+                    <li><a href="#kontak"><i class="fas fa-envelope"></i> Kontak</a></li>
+                </ul>
+            </div>
+            
+            <div class="content">
+                <div id="identitas" class="info-section">
+                    <h2><i class="fas fa-user-graduate"></i> Data Pribadi</h2>
+                    <div class="info-item">
+                        <label>Nama Lengkap:</label>
+                        <p>Muhammad Arnirofa' Anas Humam</p>
+                    </div>
+                    <div class="info-item">
+                        <label>NIM:</label>
+                        <p>2410010010</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Program Studi:</label>
+                        <p>Teknik Informatika</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Fakultas:</label>
+                        <p>Ilmu Komputer</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Mata Kuliah:</label>
+                        <p>Pemrograman Web</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Tahun Akademik:</label>
+                        <p>2023/2024</p>
+                    </div>
+                </div>
+                
+                <div id="tentang" class="info-section" style="margin-top: 40px;">
+                    <h2><i class="fas fa-project-diagram"></i> Tentang Projek SneakerHub</h2>
+                    <p>Projek ini dibuat untuk memenuhi tugas Ujian Akhir Semester (UAS) mata kuliah Pemrograman Web.</p>
+                    <p><strong>Toko SneakerHub</strong> adalah website e-commerce sederhana yang menampilkan:</p>
+                    <ul>
+                        <li>Halaman Home dengan 3 produk terpopuler</li>
+                        <li>Halaman Detail Produk dengan informasi lengkap</li>
+                        <li>Halaman Daftar/Register dengan validasi form</li>
+                        <li>Halaman Profil dengan identitas pengembang</li>
+                        <li>Desain responsif (mobile-friendly)</li>
+                        <li>Navigasi yang user-friendly</li>
+                        <li>Animasi dan efek hover modern</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Fitur Khusus:</strong></p>
+                    <ul>
+                        <li>Dark Mode Toggle</li>
+                        <li>Shopping Cart dengan localStorage</li>
+                        <li>Product Filter System</li>
+                        <li>Animated Counter Statistics</li>
+                        <li>Loading Animation</li>
+                        <li>Notification Toast System</li>
+                        <li>Quick View Product</li>
+                    </ul>
+                </div>
+                
+                <div id="teknologi" class="info-section" style="margin-top: 40px;">
+                    <h2><i class="fas fa-laptop-code"></i> Teknologi yang Digunakan</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-html5" style="color: #e34c26;"></i>
+                            <span>HTML5 - Struktur halaman</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+                            <span>CSS3 - Styling dan layout</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js" style="color: #f0db4f;"></i>
+                            <span>JavaScript - Interaktivitas</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-font-awesome" style="color: #528dd7;"></i>
+                            <span>Font Awesome - Ikon</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-google" style="color: #4285f4;"></i>
+                            <span>Google Fonts - Typography</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="kontak" class="info-section" style="margin-top: 40px;">
+                    <h2><i class="fas fa-envelope"></i> Kontak</h2>
+                    <div class="info-item">
+                        <label>Email:</label>
+                        <p>anashumam12@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <label>GitHub:</label>
+                        <p><a href="https://github.com/Ihumam" target="_blank">github.com/Ihumam</a></p>
+                    </div>
+                    <div class="info-item">
+                        <label>Pembuat:</label>
+                        <p>Muhammad Arnirofa' Anas Humam</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Dibuat pada:</label>
+                        <p>Desember 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SneakerHub. UAS Pemrograman Web - <strong>Muhammad Arnirofa' Anas Humam | NIM: 2410010010 | Teknik Informatika</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

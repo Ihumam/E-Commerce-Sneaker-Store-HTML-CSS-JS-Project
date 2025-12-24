@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - SneakerHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Sneaker<span>Hub</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="daftar.html"><i class="fas fa-user-plus"></i> Daftar</a></li>
+                <li><a href="profil.html"><i class="fas fa-user"></i> Profil</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <!-- Cart Icon -->
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Hamburger Menu -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p style="color: white; margin-top: 20px;">Memuat...</p>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <h3><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h3>
+    <div id="cartItems">
+        <p style="text-align: center; margin-top: 50px;">Keranjang masih kosong</p>
+    </div>
+    <div class="cart-total">
+        Total: <span id="cartTotal">Rp 0</span>
+    </div>
+    <button class="btn" style="width: 100%; margin-top: 20px;">
+        <i class="fas fa-check"></i> Checkout
+    </button>
+    <button class="btn" style="width: 100%; margin-top: 10px; background: #6c757d;" id="closeCart">
+        <i class="fas fa-times"></i> Tutup
+    </button>
+</div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        Produk berhasil ditambahkan ke keranjang!
+    </div>
+
+    <section class="detail-produk">
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Home</a>
+            
+            <div class="detail-container">
+                <div class="detail-img">
+                    <img id="produkImage" src="" alt="Produk">
+                </div>
+                <div class="detail-info">
+                    <h1 id="produkNama">Nama Produk</h1>
+                    <p class="harga-detail" id="produkHarga">Rp 0</p>
+                    <p class="deskripsi-detail" id="produkDeskripsi">Deskripsi produk akan dimuat di sini.</p>
+                    
+                    <div class="spesifikasi">
+                        <h3><i class="fas fa-info-circle"></i> Spesifikasi:</h3>
+                        <ul>
+                            <li><strong>Brand:</strong> <span id="brand">-</span></li>
+                            <li><strong>Warna:</strong> <span id="warna">-</span></li>
+                            <li><strong>Ukuran:</strong> <span id="ukuran">-</span></li>
+                            <li><strong>Material:</strong> <span id="material">-</span></li>
+                            <li><strong>Stok:</strong> <span id="stok">-</span></li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn-beli" id="addToCartBtn">
+                        <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SneakerHub. UAS Pemrograman Web - <strong>Muhammad Arnirofa' Anas Humam | NIM: 2410010010 | Teknik Informatika</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Ambil parameter ID dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || '1';
+        
+        // Data produk
+        const products = {
+            '1': {
+                nama: 'Nike Air Max 270',
+                harga: 'Rp 1.799.000',
+                deskripsi: 'Sneaker dengan bantalan udara terbesar yang pernah dibuat Nike, memberikan kenyamanan sepanjang hari. Cocok untuk aktivitas sehari-hari dan olahraga ringan.',
+                gambar: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                brand: 'Nike',
+                warna: 'Black/White',
+                ukuran: '38-45',
+                material: 'Mesh & Synthetic Leather',
+                stok: '15 pasang'
+            },
+            '2': {
+                nama: 'Adidas Ultraboost 22',
+                harga: 'Rp 2.299.000',
+                deskripsi: 'Menggunakan teknologi Boost terbaru untuk responsivitas maksimal saat berlari. Desain ergonomis mendukung bentuk kaki secara natural.',
+                gambar: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                brand: 'Adidas',
+                warna: 'Core Black/Solar Red',
+                ukuran: '39-46',
+                material: 'Primeknit+',
+                stok: '8 pasang'
+            },
+            '3': {
+                nama: 'Puma RS-X Bold',
+                harga: 'Rp 1.499.000',
+                deskripsi: 'Desain bold dengan paduan warna unik. Midsole tebal memberikan kenyamanan maksimal untuk gaya streetwear sehari-hari.',
+                gambar: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                brand: 'Puma',
+                warna: 'White/Blue/Orange',
+                ukuran: '37-44',
+                material: 'Suede & Textile',
+                stok: '12 pasang'
+            }
+        };
+        
+        // Tampilkan data produk berdasarkan ID
+        const product = products[productId];
+        if (product) {
+            document.getElementById('produkNama').textContent = product.nama;
+            document.getElementById('produkHarga').textContent = product.harga;
+            document.getElementById('produkDeskripsi').textContent = product.deskripsi;
+            document.getElementById('produkImage').src = product.gambar;
+            document.getElementById('produkImage').alt = product.nama;
+            document.getElementById('brand').textContent = product.brand;
+            document.getElementById('warna').textContent = product.warna;
+            document.getElementById('ukuran').textContent = product.ukuran;
+            document.getElementById('material').textContent = product.material;
+            document.getElementById('stok').textContent = product.stok;
+            
+            // Setup add to cart button
+            document.getElementById('addToCartBtn').addEventListener('click', function() {
+                const price = parseInt(product.harga.replace(/[^\d]/g, ''));
+                addToCart(parseInt(productId), product.nama, price, product.gambar);
+                showToast(`${product.nama} berhasil ditambahkan ke keranjang!`);
+            });
+        }
+    </script>
+</body>
+</html>
